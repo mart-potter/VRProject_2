@@ -15,6 +15,13 @@
     </init-param>
     <load-on-startup>1</load-on-startup>
   </servlet>
+  
+   <servlet>
+    <description></description>
+    <display-name>DatabaseDAO</display-name>
+    <servlet-name>DatabaseDAO</servlet-name>
+    <servlet-class>model.DatabaseDAO</servlet-class>
+  </servlet>
 
   <servlet-mapping>
     <servlet-name>mvc-dispatcher</servlet-name>
