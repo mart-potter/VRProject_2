@@ -18,5 +18,4 @@ public class TreeController {
     public String personTree(ModelMap model) {
         return "index";
     }
-
 }
