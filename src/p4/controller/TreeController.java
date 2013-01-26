@@ -14,7 +14,7 @@ public class TreeController {
     @Resource
     private RiikDao riikDao;
 
-    @RequestMapping(value = "/index")
+    @RequestMapping(value = "/")
     public String personTree(ModelMap model) {
         return "index";
     }
