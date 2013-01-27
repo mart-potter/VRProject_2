@@ -50,7 +50,7 @@ public class RiigiAdminYksus {
 	public RiigiAdminYksus() {}
 	
 	public RiigiAdminYksus(String avaja, Date avatud, String muutja, Date muudetud, String sulgeja, Date suletud,
-		   String kood, String nimetus, String kommentaar, Date alates, Date kuni, Collection<RiigiAdminYksuseLiik> riigi_admin_yksuse_liik_id) {
+		   String kood, String nimetus, String kommentaar, Date alates, Date kuni) {
 			
 			setAvaja(avaja);
 			setAvatud(avatud);
