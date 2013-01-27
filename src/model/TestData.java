@@ -21,23 +21,6 @@ public class TestData {
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
         
-        AdminAlluvus adminAlluvus1 = new AdminAlluvus();
-        AdminAlluvus adminAlluvus2 = new AdminAlluvus();
-        AdminAlluvus adminAlluvus3 = new AdminAlluvus();
-        AdminAlluvus adminAlluvus4 = new AdminAlluvus();
-        AdminAlluvus adminAlluvus5 = new AdminAlluvus();
-        AdminAlluvus adminAlluvus6 = new AdminAlluvus();
-        AdminAlluvus adminAlluvus7 = new AdminAlluvus();
-        AdminAlluvus adminAlluvus8 = new AdminAlluvus();
-        AdminAlluvus adminAlluvus9 = new AdminAlluvus();
-        AdminAlluvus adminAlluvus10 = new AdminAlluvus();
-        
-        VoimalikAlluvus voimalikAlluvus1 = new VoimalikAlluvus();
-        VoimalikAlluvus voimalikAlluvus2 = new VoimalikAlluvus();
-        VoimalikAlluvus voimalikAlluvus3 = new VoimalikAlluvus();
-        VoimalikAlluvus voimalikAlluvus4 = new VoimalikAlluvus();
-        VoimalikAlluvus voimalikAlluvus5 = new VoimalikAlluvus();
-       
         RiigiAdminYksus riigiAdminYksus1 = new RiigiAdminYksus("Mart Potter", new Date(), "Mart Potter", new Date(), null, null,
         		"R1", "Eesti Vabariik", kommentaar1, new Date(), null);
         RiigiAdminYksus riigiAdminYksus2 = new RiigiAdminYksus("Mart Potter", new Date(), "Mart Potter", new Date(), null, null,
@@ -60,7 +43,6 @@ public class TestData {
         		"L3", "Tartu", "Haridusmeka", new Date(), null);
         RiigiAdminYksus riigiAdminYksus11 = new RiigiAdminYksus("Mart Potter", new Date(), "Mart Potter", new Date(), null, null,
         		"V2", "Rae vald", null, new Date(), null);
-
         
         RiigiAdminYksuseLiik riigiAdminYksuseLiik1 = new RiigiAdminYksuseLiik("Mart Potter",new Date(), "Mart Potter", new Date(), null, null, "R", "Riik", null, new Date(), null);
         RiigiAdminYksuseLiik riigiAdminYksuseLiik2 = new RiigiAdminYksuseLiik("Mart Potter",new Date(), "Mart Potter", new Date(), null, null, "M", "Maakond", "Suurim haldusüksus riigis", new Date(), null);
@@ -69,6 +51,23 @@ public class TestData {
         RiigiAdminYksuseLiik riigiAdminYksuseLiik5 = new RiigiAdminYksuseLiik("Mart Potter",new Date(), "Mart Potter", new Date(), null, null, "K", "Küla", null, new Date(), null);
         RiigiAdminYksuseLiik riigiAdminYksuseLiik6 = new RiigiAdminYksuseLiik("Mart Potter",new Date(), "Mart Potter", new Date(), null, null, "T", "Talu", null, new Date(), null);
         
+        AdminAlluvus adminAlluvus1 = new AdminAlluvus(riigiAdminYksus1, riigiAdminYksus2);
+        AdminAlluvus adminAlluvus2 = new AdminAlluvus(riigiAdminYksus2, riigiAdminYksus3);
+        AdminAlluvus adminAlluvus3 = new AdminAlluvus(riigiAdminYksus2, riigiAdminYksus4);
+        AdminAlluvus adminAlluvus4 = new AdminAlluvus(riigiAdminYksus4, riigiAdminYksus5);
+        AdminAlluvus adminAlluvus5 = new AdminAlluvus(riigiAdminYksus5, riigiAdminYksus6);
+        AdminAlluvus adminAlluvus6 = new AdminAlluvus(riigiAdminYksus1, riigiAdminYksus7);
+        AdminAlluvus adminAlluvus7 = new AdminAlluvus(riigiAdminYksus1, riigiAdminYksus8);
+        AdminAlluvus adminAlluvus8 = new AdminAlluvus(riigiAdminYksus8, riigiAdminYksus10);
+        AdminAlluvus adminAlluvus9 = new AdminAlluvus(riigiAdminYksus7, riigiAdminYksus9);
+        AdminAlluvus adminAlluvus10 = new AdminAlluvus(riigiAdminYksus7, riigiAdminYksus11);
+
+        VoimalikAlluvus voimalikAlluvus1 = new VoimalikAlluvus(riigiAdminYksuseLiik1, riigiAdminYksuseLiik2);
+        VoimalikAlluvus voimalikAlluvus2 = new VoimalikAlluvus(riigiAdminYksuseLiik2, riigiAdminYksuseLiik3);
+        VoimalikAlluvus voimalikAlluvus3 = new VoimalikAlluvus(riigiAdminYksuseLiik2, riigiAdminYksuseLiik4);
+        VoimalikAlluvus voimalikAlluvus4 = new VoimalikAlluvus(riigiAdminYksuseLiik4, riigiAdminYksuseLiik5);
+        VoimalikAlluvus voimalikAlluvus5 = new VoimalikAlluvus(riigiAdminYksuseLiik5, riigiAdminYksuseLiik6);
+ 
         em.persist(adminAlluvus1);
         em.persist(adminAlluvus2);
         em.persist(adminAlluvus3);
@@ -79,6 +78,13 @@ public class TestData {
         em.persist(adminAlluvus8);
         em.persist(adminAlluvus9);
         em.persist(adminAlluvus10);
+        
+        em.persist(riigiAdminYksuseLiik1);
+        em.persist(riigiAdminYksuseLiik2);
+        em.persist(riigiAdminYksuseLiik3);
+        em.persist(riigiAdminYksuseLiik4);
+        em.persist(riigiAdminYksuseLiik5);
+        em.persist(riigiAdminYksuseLiik6);
         
         em.persist(voimalikAlluvus1);
         em.persist(voimalikAlluvus2);
@@ -92,13 +98,6 @@ public class TestData {
         em.persist(riigiAdminYksus4);
         em.persist(riigiAdminYksus5);
         em.persist(riigiAdminYksus6);
-        
-        em.persist(riigiAdminYksuseLiik1);
-        em.persist(riigiAdminYksuseLiik2);
-        em.persist(riigiAdminYksuseLiik3);
-        em.persist(riigiAdminYksuseLiik4);
-        em.persist(riigiAdminYksuseLiik5);
-        em.persist(riigiAdminYksuseLiik6);
         
         em.flush();
         
@@ -135,44 +134,6 @@ public class TestData {
         em.refresh(riigiAdminYksuseLiik2);
         em.refresh(riigiAdminYksuseLiik3);
         em.refresh(riigiAdminYksuseLiik4);
-        
-        adminAlluvus1.getRiigi_admin_yksuse_alluva_id().add(riigiAdminYksus1);
-        adminAlluvus1.getRiigi_admin_yksuse_alluva_id().add(riigiAdminYksus2);
-        adminAlluvus1.getRiigi_admin_yksuse_id().add(riigiAdminYksus1);
-        adminAlluvus1.getRiigi_admin_yksuse_id().add(riigiAdminYksus2);
-        
-        
-        voimalikAlluvus1.getRiigi_admin_yksuse_liik_id().add(riigiAdminYksuseLiik1);
-        voimalikAlluvus1.getRiigi_admin_yksuse_alluva_liik_id().add(riigiAdminYksuseLiik2);
-        voimalikAlluvus2.getRiigi_admin_yksuse_liik_id().add(riigiAdminYksuseLiik2);
-        voimalikAlluvus2.getRiigi_admin_yksuse_alluva_liik_id().add(riigiAdminYksuseLiik3);
-        voimalikAlluvus3.getRiigi_admin_yksuse_liik_id().add(riigiAdminYksuseLiik2);
-        voimalikAlluvus3.getRiigi_admin_yksuse_alluva_liik_id().add(riigiAdminYksuseLiik4);
-        voimalikAlluvus4.getRiigi_admin_yksuse_liik_id().add(riigiAdminYksuseLiik4);
-        voimalikAlluvus4.getRiigi_admin_yksuse_alluva_liik_id().add(riigiAdminYksuseLiik5);
-        voimalikAlluvus5.getRiigi_admin_yksuse_liik_id().add(riigiAdminYksuseLiik5);
-        voimalikAlluvus5.getRiigi_admin_yksuse_alluva_liik_id().add(riigiAdminYksuseLiik6);
-
-        adminAlluvus1.getRiigi_admin_yksuse_id().add(riigiAdminYksus1);
-        adminAlluvus1.getRiigi_admin_yksuse_alluva_id().add(riigiAdminYksus2);
-        adminAlluvus2.getRiigi_admin_yksuse_id().add(riigiAdminYksus2);
-        adminAlluvus2.getRiigi_admin_yksuse_alluva_id().add(riigiAdminYksus3);
-        adminAlluvus3.getRiigi_admin_yksuse_id().add(riigiAdminYksus2);
-        adminAlluvus3.getRiigi_admin_yksuse_alluva_id().add(riigiAdminYksus4);
-        adminAlluvus4.getRiigi_admin_yksuse_id().add(riigiAdminYksus4);
-        adminAlluvus4.getRiigi_admin_yksuse_alluva_id().add(riigiAdminYksus5);
-        adminAlluvus5.getRiigi_admin_yksuse_id().add(riigiAdminYksus5);
-        adminAlluvus5.getRiigi_admin_yksuse_alluva_id().add(riigiAdminYksus6);
-        adminAlluvus6.getRiigi_admin_yksuse_id().add(riigiAdminYksus1);
-        adminAlluvus6.getRiigi_admin_yksuse_alluva_id().add(riigiAdminYksus7);
-        adminAlluvus7.getRiigi_admin_yksuse_id().add(riigiAdminYksus1);
-        adminAlluvus7.getRiigi_admin_yksuse_alluva_id().add(riigiAdminYksus8);
-        adminAlluvus8.getRiigi_admin_yksuse_id().add(riigiAdminYksus8);
-        adminAlluvus8.getRiigi_admin_yksuse_alluva_id().add(riigiAdminYksus10);
-        adminAlluvus9.getRiigi_admin_yksuse_id().add(riigiAdminYksus7);
-        adminAlluvus9.getRiigi_admin_yksuse_alluva_id().add(riigiAdminYksus9);
-        adminAlluvus10.getRiigi_admin_yksuse_id().add(riigiAdminYksus7);
-        adminAlluvus10.getRiigi_admin_yksuse_alluva_id().add(riigiAdminYksus11);
         
         em.getTransaction().commit();
         em.close();
